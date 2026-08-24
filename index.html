@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Mohamad Ariyanto — Automation & PLC Engineer</title>
-  <meta name="description" content="Portofolio Mohamad Ariyanto - Automation & PLC Engineer. Fresh graduate Teknik Otomasi PPNS dengan pengalaman di PLC, IoT, dan Machine Vision." />
+  <meta name="description" content="Portofolio Mohamad Ariyanto - Automation & PLC Engineer. Fresh graduate Teknik Otomasi PPNS." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -21,14 +21,17 @@
       --sky-blue: #60A5FA;
       --sky-blue-light: #7DD3FC;
       --sky-blue-soft: #BFE3F8;
+      --white: #FFFFFF;
 
       --border-subtle: rgba(96, 165, 250, 0.15);
       --border-medium: rgba(96, 165, 250, 0.3);
       --border-glass: rgba(255, 255, 255, 0.08);
+      --border-white: rgba(255, 255, 255, 0.15);
 
       --text-primary: #F0F7FF;
       --text-secondary: #BFE3F8;
       --text-muted: #94B8D4;
+      --text-white: #FFFFFF;
 
       --gradient-cyan: linear-gradient(135deg, #60A5FA 0%, #7DD3FC 100%);
       --gradient-blue: linear-gradient(135deg, #1B5C8A 0%, #60A5FA 100%);
@@ -42,24 +45,24 @@
 
       --glow-sky: 0 0 40px rgba(96, 165, 250, 0.15);
       --glow-sky-strong: 0 0 60px rgba(96, 165, 250, 0.25);
+      --glow-white: 0 0 40px rgba(255, 255, 255, 0.08);
 
       --radius: 12px;
       --radius-lg: 16px;
       --radius-xl: 24px;
       --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 
-      /* Ukuran font responsif */
-      --font-xs: clamp(0.6rem, 1.2vw, 0.7rem);
-      --font-sm: clamp(0.7rem, 1.5vw, 0.85rem);
-      --font-md: clamp(0.85rem, 2vw, 1rem);
-      --font-lg: clamp(1.1rem, 2.5vw, 1.3rem);
-      --font-xl: clamp(1.5rem, 4vw, 2.2rem);
-      --font-2xl: clamp(2rem, 5vw, 3.2rem);
-      --font-3xl: clamp(2.5rem, 6vw, 4rem);
+      --font-xs: clamp(0.55rem, 1vw, 0.7rem);
+      --font-sm: clamp(0.7rem, 1.2vw, 0.85rem);
+      --font-md: clamp(0.85rem, 1.6vw, 1rem);
+      --font-lg: clamp(1rem, 2.2vw, 1.25rem);
+      --font-xl: clamp(1.3rem, 3vw, 2rem);
+      --font-2xl: clamp(1.8rem, 4.5vw, 3rem);
+      --font-3xl: clamp(2.2rem, 5.5vw, 3.8rem);
     }
 
     /* ============================================================
-       RESET & BASE - Mobile First
+       RESET & BASE
        ============================================================ */
     * {
       margin: 0;
@@ -121,9 +124,9 @@
       z-index: 0;
       pointer-events: none;
     }
-    .floating-shape:nth-child(1) { width: 200px; height: 200px; background: var(--sky-blue); top: -80px; left: -80px; animation: floatShape 25s ease-in-out infinite; }
+    .floating-shape:nth-child(1) { width: 200px; height: 200px; background: var(--white); top: -80px; left: -80px; animation: floatShape 25s ease-in-out infinite; opacity: 0.03; }
     .floating-shape:nth-child(2) { width: 150px; height: 150px; background: var(--sky-blue-light); bottom: -40px; right: -40px; animation: floatShape 20s ease-in-out infinite reverse; border-radius: 30% 70% 50% 50% / 30% 30% 70% 70%; }
-    .floating-shape:nth-child(3) { width: 100px; height: 100px; background: #F59E0B; top: 40%; left: 80%; animation: floatShape 18s ease-in-out infinite 3s; border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%; }
+    .floating-shape:nth-child(3) { width: 100px; height: 100px; background: var(--white); top: 40%; left: 80%; animation: floatShape 18s ease-in-out infinite 3s; border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%; opacity: 0.03; }
     .floating-shape:nth-child(4) { width: 80px; height: 80px; background: #8B5CF6; top: 70%; left: 10%; animation: floatShape 22s ease-in-out infinite 1s; border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; }
 
     @keyframes floatShape {
@@ -147,7 +150,7 @@
     }
 
     /* ============================================================
-       GLASSMORPHISM UTILITY
+       GLASS CARD
        ============================================================ */
     .glass-card {
       background: var(--glass-bg);
@@ -155,13 +158,12 @@
       -webkit-backdrop-filter: blur(16px) saturate(180%);
       border: 1px solid var(--glass-border);
       box-shadow: var(--glass-shadow), var(--glow-sky);
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
       border-radius: var(--radius-lg);
       padding: 20px 22px;
       position: relative;
       overflow: hidden;
     }
-
     .glass-card::before {
       content: '';
       position: absolute;
@@ -171,22 +173,38 @@
       bottom: 0;
       background: radial-gradient(circle at 30% 20%, rgba(96, 165, 250, 0.05), transparent 60%);
       pointer-events: none;
+      transition: all 0.6s ease;
+    }
+    .glass-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.03), transparent, rgba(255,255,255,0.05), transparent);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      animation: rotateGlow 8s linear infinite;
+    }
+    .glass-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      border-color: var(--border-white);
+      box-shadow: var(--glass-shadow), var(--glow-sky-strong), var(--glow-white);
+    }
+    .glass-card:hover::after {
+      opacity: 1;
     }
 
-    .glass-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-medium);
-      box-shadow: var(--glass-shadow), var(--glow-sky-strong);
+    @keyframes rotateGlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     @media (max-width: 600px) {
-      .glass-card {
-        padding: 16px 18px;
-        border-radius: var(--radius);
-      }
-      .glass-card:hover {
-        transform: translateY(-2px);
-      }
+      .glass-card { padding: 16px 18px; border-radius: var(--radius); }
+      .glass-card:hover { transform: translateY(-3px) scale(1.01); }
     }
 
     /* ============================================================
@@ -194,13 +212,10 @@
        ============================================================ */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg-deep-navy); }
-    ::-webkit-scrollbar-thumb {
-      background: var(--gradient-cyan);
-      border-radius: 3px;
-    }
+    ::-webkit-scrollbar-thumb { background: var(--gradient-cyan); border-radius: 3px; }
 
     /* ============================================================
-       HEADER - Mobile First
+       HEADER
        ============================================================ */
     header {
       position: fixed;
@@ -213,6 +228,12 @@
       -webkit-backdrop-filter: blur(16px) saturate(180%);
       border-bottom: 1px solid var(--glass-border);
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      animation: slideDown 0.6s ease forwards;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     .statusbar {
@@ -221,7 +242,7 @@
       gap: 10px;
       padding: 4px 14px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.5rem;
+      font-size: var(--font-xs);
       letter-spacing: 0.04em;
       border-bottom: 1px solid var(--glass-border);
       background: rgba(15, 42, 74, 0.3);
@@ -257,7 +278,7 @@
 
     .ticker-track {
       display: inline-flex;
-      gap: 24px;
+      gap: 20px;
       position: absolute;
       left: 0;
       animation: ticker-scroll 20s linear infinite;
@@ -267,9 +288,9 @@
       display: inline-block;
       padding: 0 8px;
       border-radius: 3px;
-      font-size: 0.45rem;
+      font-size: var(--font-xs);
       font-weight: 600;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       font-family: 'JetBrains Mono', monospace;
       background: rgba(96, 165, 250, 0.08);
       border: 1px solid var(--glass-border);
@@ -286,7 +307,7 @@
 
     .status-time {
       color: var(--text-muted);
-      font-size: 0.45rem;
+      font-size: var(--font-xs);
       flex-shrink: 0;
       font-family: 'JetBrains Mono', monospace;
     }
@@ -303,12 +324,19 @@
     .logo {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 800;
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 1.8vw, 1.3rem);
       background: var(--gradient-cyan);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: -0.02em;
+      animation: textShimmer 4s ease-in-out infinite;
     }
+
+    @keyframes textShimmer {
+      0%, 100% { background-size: 200% 200%; background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
     .logo span {
       background: var(--gradient-amber);
       -webkit-background-clip: text;
@@ -317,35 +345,38 @@
 
     .nav-links {
       display: flex;
-      gap: 2px;
+      gap: 4px;
       list-style: none;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
+      font-size: var(--font-xs);
     }
     .nav-links a {
-      padding: 6px 12px;
+      padding: 6px 14px;
       border-radius: 6px;
       color: var(--text-secondary);
       transition: all 0.3s ease;
       font-weight: 500;
-      font-size: 0.6rem;
-      -webkit-tap-highlight-color: transparent;
+      font-size: var(--font-xs);
+      position: relative;
     }
-    .nav-links a:hover,
-    .nav-links a:focus {
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-cyan);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    .nav-links a:hover {
       color: var(--sky-blue-light);
       background: rgba(96, 165, 250, 0.08);
     }
-    .nav-links a:active {
-      transform: scale(0.95);
-    }
+    .nav-links a:hover::after { width: 60%; }
 
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      /* Mobile menu button - akan muncul di bawah */
-    }
-
-    /* Mobile Nav Toggle */
     .nav-toggle {
       display: none;
       background: none;
@@ -354,11 +385,10 @@
       font-size: 1.3rem;
       cursor: pointer;
       padding: 4px 8px;
-      -webkit-tap-highlight-color: transparent;
     }
-    .nav-toggle:active { transform: scale(0.9); }
 
     @media (max-width: 640px) {
+      .nav-links { display: none; }
       .nav-toggle { display: block; }
     }
 
@@ -369,6 +399,7 @@
       gap: 4px;
       border-top: 1px solid var(--glass-border);
       background: rgba(11, 31, 58, 0.95);
+      animation: slideDown 0.3s ease forwards;
     }
     .mobile-nav.open { display: flex; }
     .mobile-nav a {
@@ -376,16 +407,13 @@
       border-radius: 8px;
       color: var(--text-secondary);
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
+      font-size: var(--font-sm);
       transition: all 0.3s ease;
-      -webkit-tap-highlight-color: transparent;
     }
-    .mobile-nav a:hover,
-    .mobile-nav a:focus {
+    .mobile-nav a:hover {
       color: var(--sky-blue-light);
       background: rgba(96, 165, 250, 0.08);
     }
-    .mobile-nav a:active { transform: scale(0.97); }
 
     /* ============================================================
        CONTAINER
@@ -409,6 +437,11 @@
       .wrap { padding: 0 24px; }
     }
 
+    @media (min-width: 1200px) {
+      section { padding: 80px 0; }
+      .wrap { padding: 0 32px; }
+    }
+
     /* ============================================================
        SECTION TITLE
        ============================================================ */
@@ -423,7 +456,14 @@
       -webkit-text-fill-color: transparent;
       position: relative;
       display: inline-block;
+      animation: titleShimmer 5s ease-in-out infinite;
     }
+
+    @keyframes titleShimmer {
+      0%, 100% { background-size: 200% 200%; background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
     .section-title::after {
       content: '';
       position: absolute;
@@ -434,6 +474,12 @@
       background: var(--gradient-cyan);
       border-radius: 3px;
       box-shadow: 0 0 20px rgba(96, 165, 250, 0.2);
+      animation: underlinePulse 3s ease-in-out infinite;
+    }
+
+    @keyframes underlinePulse {
+      0%, 100% { width: 50px; opacity: 1; }
+      50% { width: 80px; opacity: 0.6; }
     }
 
     .section-sub {
@@ -446,7 +492,7 @@
 
     @media (max-width: 600px) {
       .section-sub { margin-bottom: 24px; }
-      .section-title::after { width: 40px; height: 3px; }
+      .section-title::after { width: 40px; }
     }
 
     .eyebrow {
@@ -465,7 +511,14 @@
       background: var(--gradient-cyan);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      animation: iconPulse 2s ease-in-out infinite;
     }
+
+    @keyframes iconPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
     .eyebrow .highlight {
       background: var(--gradient-cyan);
       -webkit-background-clip: text;
@@ -474,7 +527,7 @@
     }
 
     /* ============================================================
-       BUTTONS - Touch Friendly
+       BUTTONS
        ============================================================ */
     .btn {
       font-family: 'JetBrains Mono', monospace;
@@ -483,7 +536,7 @@
       padding: 12px 24px;
       border-radius: 10px;
       font-weight: 600;
-      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -492,19 +545,36 @@
       position: relative;
       overflow: hidden;
       min-height: 48px;
-      -webkit-tap-highlight-color: transparent;
       text-decoration: none;
     }
-    .btn:active { transform: scale(0.96); }
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: left 0.6s ease;
+    }
+    .btn:hover::before { left: 100%; }
+    .btn:active { transform: scale(0.95); }
 
     .btn-primary {
       background: var(--gradient-blue);
       color: #fff;
       box-shadow: 0 4px 20px rgba(96, 165, 250, 0.25);
+      animation: btnGlow 3s ease-in-out infinite;
     }
+
+    @keyframes btnGlow {
+      0%, 100% { box-shadow: 0 4px 20px rgba(96, 165, 250, 0.25); }
+      50% { box-shadow: 0 4px 35px rgba(96, 165, 250, 0.5); }
+    }
+
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(96, 165, 250, 0.4);
+      box-shadow: 0 8px 30px rgba(96, 165, 250, 0.5);
     }
 
     .btn-secondary {
@@ -528,17 +598,8 @@
     }
 
     @media (max-width: 600px) {
-      .btn {
-        padding: 10px 18px;
-        min-height: 44px;
-        font-size: var(--font-sm);
-        border-radius: 8px;
-      }
-      .hero-btns .btn { 
-        flex: 1; 
-        justify-content: center;
-        min-width: 120px;
-      }
+      .btn { padding: 10px 18px; min-height: 44px; font-size: var(--font-sm); border-radius: 8px; }
+      .hero-btns .btn { flex: 1; justify-content: center; min-width: 100px; }
     }
 
     @media (max-width: 400px) {
@@ -547,7 +608,7 @@
     }
 
     /* ============================================================
-       HERO - Mobile First
+       HERO
        ============================================================ */
     .hero {
       padding: 20px 0 30px;
@@ -567,6 +628,12 @@
       height: 100%;
       background: radial-gradient(ellipse, rgba(96, 165, 250, 0.06), transparent 70%);
       pointer-events: none;
+      animation: heroGlow 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroGlow {
+      0% { transform: scale(1); opacity: 0.5; }
+      100% { transform: scale(1.2); opacity: 1; }
     }
 
     .hero-grid {
@@ -599,7 +666,8 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: block;
-      font-size: var(--font-xl);
+      font-size: var(--font-lg);
+      animation: textShimmer 4s ease-in-out infinite;
     }
 
     .hero p.desc {
@@ -623,7 +691,6 @@
     }
     @media (max-width: 768px) { .hero-btns { justify-content: center; } }
 
-    /* Hero Stats */
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -631,10 +698,7 @@
       margin-top: 24px;
       max-width: 540px;
     }
-    @media (min-width: 500px) {
-      .hero-stats { grid-template-columns: repeat(4, 1fr); }
-    }
-    @media (min-width: 768px) { .hero-stats { margin-left: 0; } }
+    @media (min-width: 500px) { .hero-stats { grid-template-columns: repeat(4, 1fr); } }
     @media (max-width: 768px) { .hero-stats { margin-left: auto; margin-right: auto; } }
 
     .stat-item {
@@ -645,9 +709,13 @@
       border-radius: var(--radius);
       padding: 12px 14px;
       text-align: center;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
     }
-    .stat-item:hover { transform: translateY(-3px); border-color: var(--border-subtle); }
+    .stat-item:hover {
+      transform: translateY(-4px) scale(1.03);
+      border-color: var(--border-white);
+      box-shadow: var(--glow-sky), var(--glow-white);
+    }
 
     .stat-item .number {
       font-family: 'Space Grotesk', sans-serif;
@@ -676,16 +744,13 @@
 
     .profile-ring {
       position: relative;
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       flex-shrink: 0;
     }
-    @media (min-width: 600px) {
-      .profile-ring { width: 250px; height: 250px; }
-    }
-    @media (min-width: 768px) {
-      .profile-ring { width: 280px; height: 280px; }
-    }
+    @media (min-width: 500px) { .profile-ring { width: 200px; height: 200px; } }
+    @media (min-width: 768px) { .profile-ring { width: 250px; height: 250px; } }
+    @media (min-width: 992px) { .profile-ring { width: 280px; height: 280px; } }
 
     .profile-ring::before {
       content: '';
@@ -712,9 +777,12 @@
       padding: 3px;
       background: var(--gradient-cyan);
       box-shadow: 0 0 40px rgba(96, 165, 250, 0.15);
-      transition: all 0.4s ease;
+      transition: all 0.5s ease;
     }
-    .profile-container:hover { transform: scale(1.02); box-shadow: 0 0 60px rgba(96, 165, 250, 0.25); }
+    .profile-container:hover {
+      transform: scale(1.03) rotate(2deg);
+      box-shadow: 0 0 60px rgba(96, 165, 250, 0.3);
+    }
 
     .profile-container img {
       width: 100%;
@@ -739,9 +807,7 @@
       border: 3px solid var(--bg-deep-navy);
     }
 
-    .float-badge {
-      display: none;
-    }
+    .float-badge { display: none; }
     @media (min-width: 992px) {
       .float-badge {
         display: flex;
@@ -749,17 +815,19 @@
         background: var(--glass-bg);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border: 1px solid var(--glass-border);
+        border: 1px solid var(--border-white);
         border-radius: 50px;
         padding: 6px 14px;
         font-size: 0.6rem;
         font-family: 'JetBrains Mono', monospace;
-        color: var(--text-secondary);
+        color: var(--text-white);
         align-items: center;
         gap: 5px;
         animation: float 4s ease-in-out infinite;
         z-index: 2;
         pointer-events: none;
+        background: rgba(255,255,255,0.06);
+        box-shadow: var(--glow-white);
       }
       .float-badge i { font-size: 0.7rem; background: var(--gradient-cyan); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
       .float-badge:nth-child(2) { top: 8%; right: -8%; animation-delay: 0.5s; }
@@ -780,6 +848,9 @@
       color: var(--text-secondary);
       padding: 24px 26px;
       line-height: 1.8;
+      border-left: 3px solid transparent;
+      border-image: var(--gradient-cyan);
+      border-image-slice: 1;
     }
     .about-box .quote-icon {
       background: var(--gradient-amber);
@@ -789,6 +860,7 @@
       margin-right: 10px;
       float: left;
       opacity: 0.5;
+      animation: iconPulse 3s ease-in-out infinite;
     }
     .about-box strong { color: var(--text-primary); font-weight: 700; }
 
@@ -802,7 +874,7 @@
        ============================================================ */
     .ladder {
       position: relative;
-      padding-left: 40px;
+      padding-left: 36px;
     }
     .rail-a, .rail-b {
       position: absolute;
@@ -812,29 +884,33 @@
       background: var(--gradient-cyan);
       opacity: 0.25;
     }
-    .rail-a { left: 10px; }
-    .rail-b { left: 24px; }
+    .rail-a { left: 8px; }
+    .rail-b { left: 20px; }
 
     .rung {
       position: relative;
-      margin-bottom: 32px;
-      padding: 18px 20px;
+      margin-bottom: 28px;
+      padding: 16px 18px;
       background: var(--glass-bg);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-lg);
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
     }
     .rung:last-child { margin-bottom: 0; }
-    .rung:hover { transform: translateX(4px); border-color: var(--border-subtle); }
+    .rung:hover {
+      transform: translateX(6px) scale(1.01);
+      border-color: var(--border-white);
+      box-shadow: var(--glow-sky), var(--glow-white);
+    }
 
     .rung::before {
       content: '';
       position: absolute;
-      left: -30px;
-      top: 24px;
-      width: 30px;
+      left: -28px;
+      top: 22px;
+      width: 28px;
       height: 2px;
       background: var(--gradient-cyan);
       opacity: 0.4;
@@ -842,16 +918,16 @@
     .rung::after {
       content: '';
       position: absolute;
-      left: -36px;
-      top: 18px;
+      left: -34px;
+      top: 16px;
       width: 14px;
       height: 14px;
       border-radius: 50%;
       background: var(--gradient-cyan);
       box-shadow: 0 0 20px rgba(96, 165, 250, 0.2);
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
     }
-    .rung:hover::after { transform: scale(1.2); box-shadow: 0 0 30px rgba(96, 165, 250, 0.35); }
+    .rung:hover::after { transform: scale(1.3); box-shadow: 0 0 35px rgba(96, 165, 250, 0.4); }
 
     .rung h3 {
       font-family: 'Space Grotesk', sans-serif;
@@ -871,7 +947,7 @@
       color: var(--text-muted);
       font-family: 'JetBrains Mono', monospace;
       font-size: var(--font-xs);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .rung ul {
       padding-left: 16px;
@@ -881,18 +957,20 @@
     .rung li {
       margin-bottom: 4px;
       padding-left: 2px;
+      transition: all 0.3s ease;
     }
+    .rung li:hover { color: var(--text-primary); padding-left: 6px; }
     .rung li::marker { color: #F59E0B; }
 
     @media (min-width: 768px) {
       .ladder { padding-left: 52px; }
-      .rung { padding: 24px 28px; margin-bottom: 40px; }
+      .rung { padding: 24px 28px; margin-bottom: 36px; }
       .rung::before { left: -38px; top: 30px; width: 38px; }
       .rung::after { left: -44px; top: 22px; width: 18px; height: 18px; }
     }
 
     /* ============================================================
-       PROJECTS - Mobile First
+       PROJECTS
        ============================================================ */
     .project-filter {
       display: flex;
@@ -912,16 +990,19 @@
       backdrop-filter: blur(8px);
       color: var(--text-secondary);
       cursor: pointer;
-      transition: all 0.3s ease;
-      -webkit-tap-highlight-color: transparent;
+      transition: all 0.4s ease;
     }
-    .filter-btn:hover { border-color: var(--border-subtle); color: var(--text-primary); }
-    .filter-btn:active { transform: scale(0.95); }
+    .filter-btn:hover {
+      border-color: var(--border-white);
+      color: var(--text-white);
+      transform: translateY(-2px);
+      box-shadow: var(--glow-white);
+    }
     .filter-btn.active {
       background: var(--gradient-cyan);
       color: var(--bg-deep-navy);
       border-color: transparent;
-      box-shadow: 0 4px 16px rgba(96, 165, 250, 0.2);
+      box-shadow: 0 4px 16px rgba(96, 165, 250, 0.3);
     }
 
     .grid-3 {
@@ -941,7 +1022,7 @@
       flex-direction: column;
       height: 100%;
       padding: 18px;
-      transition: all 0.3s ease;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
       background: var(--glass-bg);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
@@ -950,9 +1031,9 @@
       box-shadow: var(--glass-shadow);
     }
     .proj:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-subtle);
-      box-shadow: var(--glass-shadow), var(--glow-sky);
+      transform: translateY(-6px) scale(1.02);
+      border-color: var(--border-white);
+      box-shadow: var(--glass-shadow), var(--glow-sky), var(--glow-white);
     }
     .proj p { flex: 1; color: var(--text-secondary); font-size: var(--font-sm); margin-bottom: 12px; line-height: 1.6; }
     .proj h3 { font-size: var(--font-md); margin-bottom: 6px; font-family: 'Space Grotesk', sans-serif; color: var(--text-primary); }
@@ -1002,14 +1083,14 @@
       overflow: hidden;
       cursor: pointer;
       border: 2px solid var(--glass-border);
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
       aspect-ratio: 1 / 1;
       background: var(--bg-deep-navy);
     }
     .gallery-thumb:hover {
-      border-color: var(--sky-blue-light);
-      transform: scale(1.04);
-      box-shadow: var(--glow-sky);
+      border-color: var(--border-white);
+      transform: scale(1.05);
+      box-shadow: var(--glow-sky), var(--glow-white);
       z-index: 2;
     }
     .gallery-thumb img {
@@ -1026,10 +1107,10 @@
       padding: 3px 6px;
       background: rgba(11, 31, 58, 0.9);
       color: var(--text-secondary);
-      font-size: 0.45rem;
+      font-size: var(--font-xs);
       font-family: 'JetBrains Mono', monospace;
       transform: translateY(100%);
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease;
       backdrop-filter: blur(4px);
       border-top: 1px solid var(--glass-border);
       text-align: center;
@@ -1039,7 +1120,6 @@
     @media (min-width: 768px) {
       .proj { padding: 24px; }
       .project-gallery { grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); gap: 8px; }
-      .gallery-thumb .caption { font-size: 0.5rem; padding: 4px 8px; }
     }
 
     /* ============================================================
@@ -1055,8 +1135,14 @@
       justify-content: center;
       align-items: center;
       padding: 20px;
+      animation: fadeInOverlay 0.4s ease;
     }
     .lightbox-overlay.active { display: flex; }
+
+    @keyframes fadeInOverlay {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
     .lightbox-content {
       position: relative;
@@ -1064,10 +1150,17 @@
       max-height: 90vh;
       background: var(--bg-deep-navy);
       border-radius: var(--radius-lg);
-      border: 1px solid var(--border-medium);
-      box-shadow: var(--shadow), var(--glow-sky-strong);
+      border: 1px solid var(--border-white);
+      box-shadow: var(--shadow), var(--glow-sky-strong), var(--glow-white);
       overflow: hidden;
+      animation: scaleIn 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     }
+
+    @keyframes scaleIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
     .lightbox-content img {
       display: block;
       max-width: 100%;
@@ -1080,7 +1173,7 @@
       top: 10px;
       right: 12px;
       background: rgba(0, 0, 0, 0.6);
-      border: 1px solid var(--glass-border);
+      border: 1px solid var(--border-white);
       border-radius: 50%;
       width: 36px;
       height: 36px;
@@ -1088,31 +1181,41 @@
       align-items: center;
       justify-content: center;
       font-size: 1rem;
-      color: var(--text-primary);
+      color: var(--text-white);
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
       z-index: 10;
     }
-    .lightbox-close:hover { background: rgba(239, 68, 68, 0.2); border-color: #EF4444; color: #EF4444; transform: rotate(90deg); }
+    .lightbox-close:hover {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: #EF4444;
+      color: #EF4444;
+      transform: rotate(90deg) scale(1.1);
+    }
 
     .lightbox-nav {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       background: rgba(0, 0, 0, 0.5);
-      border: 1px solid var(--glass-border);
+      border: 1px solid var(--border-white);
       border-radius: 50%;
       width: 36px;
       height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--text-primary);
+      color: var(--text-white);
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
       z-index: 10;
     }
-    .lightbox-nav:hover { background: rgba(96, 165, 250, 0.2); border-color: var(--sky-blue-light); color: var(--sky-blue-light); }
+    .lightbox-nav:hover {
+      background: rgba(96, 165, 250, 0.2);
+      border-color: var(--sky-blue-light);
+      color: var(--sky-blue-light);
+      transform: translateY(-50%) scale(1.1);
+    }
     .lightbox-nav.prev { left: 10px; }
     .lightbox-nav.next { right: 10px; }
 
@@ -1127,7 +1230,7 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: var(--font-xs);
       color: var(--text-secondary);
-      border: 1px solid var(--glass-border);
+      border: 1px solid var(--border-white);
       backdrop-filter: blur(4px);
       z-index: 10;
     }
@@ -1148,15 +1251,9 @@
       grid-template-columns: 1fr 1fr;
       gap: 8px;
     }
-    @media (min-width: 500px) {
-      .skills-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    }
-    @media (min-width: 768px) {
-      .skills-grid { grid-template-columns: repeat(4, 1fr); gap: 12px; }
-    }
-    @media (min-width: 992px) {
-      .skills-grid { grid-template-columns: repeat(5, 1fr); }
-    }
+    @media (min-width: 500px) { .skills-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; } }
+    @media (min-width: 768px) { .skills-grid { grid-template-columns: repeat(4, 1fr); gap: 12px; } }
+    @media (min-width: 992px) { .skills-grid { grid-template-columns: repeat(5, 1fr); } }
 
     .skill {
       font-family: 'JetBrains Mono', monospace;
@@ -1171,12 +1268,12 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
     }
     .skill:hover {
-      border-color: var(--border-subtle);
-      transform: translateY(-2px);
-      box-shadow: var(--glow-sky);
+      border-color: var(--border-white);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: var(--glow-sky), var(--glow-white);
     }
     .skill i {
       font-size: 0.9rem;
@@ -1189,112 +1286,192 @@
     .skill .skill-label { color: var(--text-primary); font-weight: 600; }
 
     /* ============================================================
-       EDUCATION - Responsive
+       EDUCATION & ORGANIZATION - VERTIKAL
        ============================================================ */
-    .edu-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-    @media (min-width: 768px) {
-      .edu-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .edu-vertical {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
 
     .edu-card {
-      padding: 18px 20px;
-      transition: all 0.3s ease;
+      padding: 24px 28px;
+      transition: all 0.4s ease;
     }
-    .edu-card:hover { transform: translateY(-4px); }
+    .edu-card:hover {
+      transform: translateY(-4px);
+    }
 
     .edu-card-header {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
       border-bottom: 2px solid var(--glass-border);
     }
     .edu-card-header i {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       background: var(--gradient-amber);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .edu-card-header h3 {
       font-family: 'JetBrains Mono', monospace;
-      font-size: var(--font-xs);
+      font-size: var(--font-sm);
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: var(--text-secondary);
       font-weight: 600;
     }
 
-    .edu-item { margin-bottom: 4px; }
-    .edu-item:last-child { margin-bottom: 0; }
+    /* ============================================================
+       PENDIDIKAN FORMAL - TIMELINE
+       ============================================================ */
+    .edu-timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+    .edu-timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 4px;
+      bottom: 4px;
+      width: 2px;
+      background: var(--gradient-cyan);
+      opacity: 0.3;
+    }
 
-    .edu-item-header {
+    .edu-timeline-item {
+      position: relative;
+      padding: 14px 18px;
+      margin-bottom: 16px;
+      background: rgba(255,255,255,0.02);
+      border-radius: var(--radius);
+      border: 1px solid var(--glass-border);
+      transition: all 0.4s ease;
+    }
+    .edu-timeline-item:last-child { margin-bottom: 0; }
+    .edu-timeline-item:hover {
+      border-color: var(--border-white);
+      transform: translateX(6px);
+      box-shadow: var(--glow-white);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .edu-timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -24px;
+      top: 22px;
+      width: 18px;
+      height: 2px;
+      background: var(--gradient-cyan);
+      opacity: 0.4;
+    }
+    .edu-timeline-item::after {
+      content: '';
+      position: absolute;
+      left: -28px;
+      top: 18px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gradient-cyan);
+      box-shadow: 0 0 16px rgba(96, 165, 250, 0.2);
+      transition: all 0.4s ease;
+    }
+    .edu-timeline-item:hover::after {
+      transform: scale(1.3);
+      box-shadow: 0 0 25px rgba(96, 165, 250, 0.4);
+    }
+
+    .edu-timeline-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       flex-wrap: wrap;
       gap: 6px;
     }
-    .edu-institution { font-weight: 700; font-size: var(--font-sm); color: var(--text-primary); }
-    .edu-badge {
+    .edu-timeline-institution {
+      font-weight: 700;
+      font-size: var(--font-md);
+      color: var(--text-primary);
+    }
+    .edu-timeline-badge {
       font-family: 'JetBrains Mono', monospace;
       font-size: var(--font-xs);
       font-weight: 600;
       color: #34D399;
       background: rgba(52, 211, 153, 0.1);
-      padding: 2px 10px;
+      padding: 2px 12px;
       border-radius: 20px;
       border: 1px solid rgba(52, 211, 153, 0.12);
       white-space: nowrap;
     }
-    .edu-detail {
+    .edu-timeline-detail {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 2px;
+      margin-top: 4px;
     }
-    .edu-major {
+    .edu-timeline-major {
       font-family: 'JetBrains Mono', monospace;
-      font-size: var(--font-xs);
+      font-size: var(--font-sm);
       color: var(--sky-blue-light);
       display: flex;
       align-items: center;
       gap: 4px;
     }
-    .edu-gpa {
+    .edu-timeline-major i { font-size: 0.6rem; color: #F59E0B; }
+    .edu-timeline-gpa {
       font-family: 'JetBrains Mono', monospace;
-      font-size: var(--font-xs);
+      font-size: var(--font-sm);
       color: #F59E0B;
       background: rgba(245, 158, 11, 0.06);
-      padding: 0 6px;
+      padding: 0 8px;
       border-radius: 4px;
       display: flex;
       align-items: center;
       gap: 4px;
     }
-    .edu-desc {
-      font-size: var(--font-xs);
+    .edu-timeline-gpa i { font-size: 0.6rem; }
+    .edu-timeline-desc {
+      font-size: var(--font-sm);
       color: var(--text-muted);
       margin-top: 4px;
       display: flex;
       align-items: flex-start;
       gap: 5px;
     }
-    .edu-desc i { color: #34D399; font-size: 0.5rem; margin-top: 3px; }
+    .edu-timeline-desc i { color: #34D399; font-size: 0.6rem; margin-top: 3px; }
 
-    /* Organization */
-    .org-item {
-      padding-bottom: 14px;
-      margin-bottom: 14px;
-      border-bottom: 1px solid var(--glass-border);
-      transition: all 0.2s ease;
+    /* ============================================================
+       ORGANISASI
+       ============================================================ */
+    .org-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
     }
-    .org-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-    .org-item:hover { padding-left: 4px; border-color: var(--border-subtle); }
+    @media (max-width: 700px) {
+      .org-grid { grid-template-columns: 1fr; }
+    }
+
+    .org-item {
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.02);
+      border-radius: var(--radius);
+      border: 1px solid var(--glass-border);
+      transition: all 0.4s ease;
+    }
+    .org-item:hover {
+      border-color: var(--border-white);
+      transform: translateY(-3px);
+      box-shadow: var(--glow-white);
+      background: rgba(255,255,255,0.04);
+    }
 
     .org-item-header {
       display: flex;
@@ -1304,20 +1481,31 @@
       gap: 6px;
       margin-bottom: 2px;
     }
-    .org-name { font-weight: 700; font-size: var(--font-sm); color: var(--text-primary); }
-    .org-company { font-size: var(--font-sm); color: var(--text-secondary); }
+    .org-name {
+      font-weight: 700;
+      font-size: var(--font-md);
+      color: var(--text-primary);
+    }
+    .org-company {
+      font-size: var(--font-sm);
+      color: var(--text-secondary);
+    }
     .org-badge {
       font-family: 'JetBrains Mono', monospace;
       font-size: var(--font-xs);
       font-weight: 600;
       color: #F59E0B;
       background: rgba(245, 158, 11, 0.1);
-      padding: 2px 10px;
+      padding: 2px 12px;
       border-radius: 20px;
       border: 1px solid rgba(245, 158, 11, 0.12);
       white-space: nowrap;
     }
-    .org-desc { font-size: var(--font-xs); color: var(--text-secondary); margin-top: 2px; }
+    .org-desc {
+      font-size: var(--font-sm);
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
     .org-achievement {
       display: inline-flex;
       align-items: center;
@@ -1326,15 +1514,16 @@
       color: var(--sky-blue-light);
       margin-top: 4px;
       background: rgba(96, 165, 250, 0.04);
-      padding: 2px 10px;
+      padding: 2px 12px;
       border-radius: 4px;
       border: 1px solid rgba(96, 165, 250, 0.05);
     }
-    .org-achievement i { font-size: 0.55rem; color: #F59E0B; }
+    .org-achievement i { font-size: 0.6rem; color: #F59E0B; }
 
+    /* Foto Dokumentasi Organisasi */
     .org-photos {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 6px;
       margin-top: 8px;
     }
@@ -1344,14 +1533,14 @@
       overflow: hidden;
       cursor: pointer;
       border: 2px solid var(--glass-border);
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
       aspect-ratio: 1 / 1;
       background: var(--bg-deep-navy);
     }
     .org-photo:hover {
-      border-color: var(--sky-blue-light);
-      transform: scale(1.04);
-      box-shadow: var(--glow-sky);
+      border-color: var(--border-white);
+      transform: scale(1.05);
+      box-shadow: var(--glow-sky), var(--glow-white);
       z-index: 2;
     }
     .org-photo img {
@@ -1368,70 +1557,137 @@
       padding: 2px 6px;
       background: rgba(11, 31, 58, 0.9);
       color: var(--text-secondary);
-      font-size: 0.4rem;
+      font-size: var(--font-xs);
       font-family: 'JetBrains Mono', monospace;
       transform: translateY(100%);
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease;
       backdrop-filter: blur(4px);
       border-top: 1px solid var(--glass-border);
       text-align: center;
     }
     .org-photo:hover .org-photo-caption { transform: translateY(0); }
 
-    @media (min-width: 500px) {
-      .org-photos { grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); }
-    }
-
-    /* Certifications */
+    /* ============================================================
+       SERTIFIKASI - UKURAN GAMBAR DISESUAIKAN
+       ============================================================ */
     .cert-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
     }
-    @media (min-width: 600px) {
-      .cert-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 700px) {
+      .cert-grid { grid-template-columns: 1fr; }
     }
 
     .cert-item {
       display: flex;
-      gap: 12px;
-      padding: 14px 16px;
-      background: var(--glass-bg);
+      gap: 14px;
+      padding: 16px 18px;
+      background: rgba(255,255,255,0.02);
       border-radius: var(--radius);
       border: 1px solid var(--glass-border);
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
       align-items: flex-start;
     }
-    .cert-item:hover { border-color: var(--border-subtle); transform: translateY(-2px); }
+    .cert-item:hover {
+      border-color: var(--border-white);
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: var(--glow-white);
+    }
 
     .cert-icon {
-      width: 36px;
-      height: 36px;
-      min-width: 36px;
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
       border-radius: 50%;
       background: rgba(96, 165, 250, 0.06);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: var(--sky-blue-light);
+      transition: all 0.4s ease;
     }
-    .cert-name { font-weight: 600; font-size: var(--font-sm); color: var(--text-primary); }
-    .cert-desc { font-size: var(--font-xs); color: var(--text-secondary); margin-top: 1px; }
+    .cert-item:hover .cert-icon {
+      background: rgba(96, 165, 250, 0.12);
+      transform: scale(1.1);
+    }
+
+    .cert-content {
+      flex: 1;
+    }
+    .cert-name {
+      font-weight: 600;
+      font-size: var(--font-md);
+      color: var(--text-primary);
+    }
+    .cert-desc {
+      font-size: var(--font-sm);
+      color: var(--text-secondary);
+      margin-top: 1px;
+    }
     .cert-badge {
       display: inline-flex;
       align-items: center;
       gap: 4px;
       font-size: var(--font-xs);
       color: #F59E0B;
-      margin-top: 3px;
+      margin-top: 4px;
       background: rgba(245, 158, 11, 0.04);
-      padding: 2px 8px;
+      padding: 2px 10px;
       border-radius: 4px;
       border: 1px solid rgba(245, 158, 11, 0.06);
     }
 
-    .full-width { grid-column: 1 / -1; }
+    /* Foto Dokumentasi Sertifikasi - Ukuran Sedang & Rapi */
+    .cert-photos {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+      margin-top: 8px;
+      max-width: 200px;
+    }
+    .cert-photo {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid var(--glass-border);
+      transition: all 0.4s ease;
+      aspect-ratio: 4 / 3;
+      background: var(--bg-deep-navy);
+      width: 100%;
+    }
+    .cert-photo:hover {
+      border-color: var(--border-white);
+      transform: scale(1.04);
+      box-shadow: var(--glow-sky), var(--glow-white);
+      z-index: 2;
+    }
+    .cert-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .cert-photo-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 4px 10px;
+      background: rgba(11, 31, 58, 0.9);
+      color: var(--text-secondary);
+      font-size: var(--font-xs);
+      font-family: 'JetBrains Mono', monospace;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+      backdrop-filter: blur(4px);
+      border-top: 1px solid var(--glass-border);
+      text-align: center;
+    }
+    .cert-photo:hover .cert-photo-caption { transform: translateY(0); }
 
     /* ============================================================
        TESTIMONIAL
@@ -1441,21 +1697,29 @@
       grid-template-columns: 1fr;
       gap: 16px;
     }
-    @media (min-width: 600px) {
-      .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (min-width: 992px) {
-      .testimonial-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    }
+    @media (min-width: 600px) { .testimonial-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 992px) { .testimonial-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
 
     .testimonial-card {
       padding: 20px 22px;
       text-align: center;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
     }
-    .testimonial-card:hover { transform: translateY(-4px); }
+    .testimonial-card:hover { transform: translateY(-5px) scale(1.01); }
 
-    .testimonial-card .stars { color: #F59E0B; font-size: 0.9rem; margin-bottom: 10px; letter-spacing: 3px; }
+    .testimonial-card .stars {
+      color: #F59E0B;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+      animation: starPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes starPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
     .testimonial-card .quote { color: var(--text-secondary); font-style: italic; font-size: var(--font-sm); line-height: 1.7; }
     .testimonial-card .author { margin-top: 12px; font-family: 'JetBrains Mono', monospace; font-size: var(--font-xs); color: var(--text-muted); }
     .testimonial-card .author strong { color: var(--text-primary); font-weight: 600; }
@@ -1466,15 +1730,24 @@
     .contact-panel {
       text-align: center;
       padding: 32px 20px;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
     }
     .contact-panel:hover {
-      border-color: var(--border-medium);
-      box-shadow: var(--glass-shadow), var(--glow-sky-strong);
+      border-color: var(--border-white);
+      box-shadow: var(--glass-shadow), var(--glow-sky-strong), var(--glow-white);
       transform: translateY(-4px);
     }
-    .contact-panel p { color: var(--text-secondary); margin-bottom: 20px; font-size: var(--font-md); }
-    .contact-panel p i { background: var(--gradient-amber); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-right: 4px; }
+    .contact-panel p {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      font-size: var(--font-md);
+    }
+    .contact-panel p i {
+      background: var(--gradient-amber);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-right: 4px;
+    }
 
     .contact-social {
       display: flex;
@@ -1496,27 +1769,20 @@
       border: 1px solid var(--glass-border);
       color: var(--text-secondary);
       font-size: 1.1rem;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
       text-decoration: none;
-      -webkit-tap-highlight-color: transparent;
     }
     .contact-social a:hover {
-      transform: translateY(-4px) scale(1.05);
-      border-color: var(--border-medium);
-      color: var(--sky-blue-light);
-      box-shadow: var(--glow-sky);
+      transform: translateY(-5px) scale(1.1);
+      border-color: var(--border-white);
+      color: var(--text-white);
+      box-shadow: var(--glow-sky), var(--glow-white);
     }
-    .contact-social a:active { transform: scale(0.92); }
 
     .contact-social a[href*="mailto"]:hover { border-color: #EA4335; color: #EA4335; }
     .contact-social a[href*="wa.me"]:hover { border-color: #25D366; color: #25D366; }
     .contact-social a[href*="linkedin"]:hover { border-color: #0A66C2; color: #0A66C2; }
     .contact-social a[href*="github"]:hover { border-color: #6e5494; color: #6e5494; }
-    .contact-social a[href*="instagram"]:hover { border-color: #E4405F; color: #E4405F; }
-
-    .contact-social a .social-label {
-      display: none;
-    }
 
     @media (min-width: 768px) {
       .contact-panel { padding: 48px 32px; }
@@ -1528,7 +1794,7 @@
        ============================================================ */
     footer {
       border-top: 1px solid var(--glass-border);
-      padding: 28px 16px;
+      padding: 24px 16px;
       text-align: center;
       font-family: 'JetBrains Mono', monospace;
       font-size: var(--font-xs);
@@ -1556,14 +1822,13 @@
       color: var(--text-secondary);
       text-decoration: none;
       font-size: var(--font-xs);
-      -webkit-tap-highlight-color: transparent;
     }
     footer .flinks a:hover {
-      color: var(--sky-blue-light);
-      background: rgba(96, 165, 250, 0.06);
+      color: var(--text-white);
+      background: rgba(255,255,255,0.06);
       transform: translateY(-2px);
+      box-shadow: var(--glow-white);
     }
-    footer .flinks a:active { transform: scale(0.95); }
 
     .footer-divider {
       width: 30px;
@@ -1575,13 +1840,43 @@
     }
 
     @media (min-width: 768px) {
-      footer { padding: 36px 24px; }
+      footer { padding: 32px 24px; }
       footer .flinks { gap: 20px; }
     }
 
     /* ============================================================
-       SCROLL ANIMATIONS
+       ANIMASI TRANSISI
        ============================================================ */
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .slide-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .slide-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .slide-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scale-up {
+      opacity: 0;
+      transform: scale(0.85);
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .scale-up.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
@@ -1608,8 +1903,8 @@
 
     .hero-fade {
       opacity: 0;
-      transform: translateY(20px);
-      animation: heroFade 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+      transform: translateY(20px) scale(0.98);
+      animation: heroFade 0.9s cubic-bezier(0.23, 1, 0.32, 1) forwards;
     }
     .hero-fade:nth-child(1) { animation-delay: 0.1s; }
     .hero-fade:nth-child(2) { animation-delay: 0.25s; }
@@ -1618,7 +1913,7 @@
     @keyframes heroFade {
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
     }
 
@@ -1627,7 +1922,8 @@
        ============================================================ */
     @media (prefers-reduced-motion: reduce) {
       * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-      .fade-up, .fade-up-stagger, .hero-fade {
+      .fade-up, .fade-up-stagger, .hero-fade,
+      .slide-left, .slide-right, .scale-up {
         opacity: 1 !important;
         transform: none !important;
         animation: none !important;
@@ -1638,6 +1934,7 @@
       .profile-ring::before { animation: none !important; }
       #bg-gradient { animation: none !important; }
       .floating-shape { animation: none !important; }
+      .glass-card::after { animation: none !important; }
     }
   </style>
 </head>
@@ -1698,7 +1995,6 @@
       </button>
     </nav>
 
-    <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobileNav">
       <a href="#about">Tentang</a>
       <a href="#experience">Pengalaman</a>
@@ -1882,8 +2178,8 @@
           <h3>Aluminum Plate Defect Detection</h3>
           <p>Deteksi cacat otomatis menggunakan machine vision untuk kontrol kualitas pelat aluminium.</p>
           <div class="project-gallery">
-            <div class="gallery-thumb" data-img="images/Vision1.jpg" data-caption="Camera Setup">
-              <img src="images/Vision1.jpg" alt="Vision Setup" onerror="this.src='https://placehold.co/400x400/0B1F3A/60A5FA?text=Vision+1'">
+            <div class="gallery-thumb" data-img="images/vision1.jpg" data-caption="Camera Setup">
+              <img src="images/vision1.jpg" alt="Vision Setup" onerror="this.src='https://placehold.co/400x400/0B1F3A/60A5FA?text=Vision+1'">
               <span class="caption">Camera Setup</span>
             </div>
             <div class="gallery-thumb" data-img="images/Vision2.jpg" data-caption="Defect Detection">
@@ -1934,16 +2230,16 @@
           <h3>OptiAI: Asisten Klinis Berbasis AI</h3>
           <p>Aplikasi web berbasis AI (Google Apps Script) untuk skrining kesehatan mata, membantu deteksi dini gangguan mata.</p>
           <div class="project-gallery">
-            <div class="gallery-thumb" data-img="images/Conveyor1.jpg" data-caption="Dashboard OptiAI">
-              <img src="images/Conveyor1.jpg" alt="OptiAI Dashboard" onerror="this.src='https://placehold.co/400x400/0B1F3A/60A5FA?text=OptiAI+1'">
+            <div class="gallery-thumb" data-img="images/Fire1.jpg" data-caption="Dashboard OptiAI">
+              <img src="images/Fire1.jpg" alt="OptiAI Dashboard" onerror="this.src='https://placehold.co/400x400/0B1F3A/60A5FA?text=OptiAI+1'">
               <span class="caption">Dashboard</span>
             </div>
-            <div class="gallery-thumb" data-img="images/Conveyor2.jpg" data-caption="Analisis Mata">
-              <img src="images/Conveyor2.jpg" alt="Eye Analysis" onerror="this.src='https://placehold.co/400x400/0B1F3A/F59E0B?text=OptiAI+2'">
+            <div class="gallery-thumb" data-img="images/Fire2.jpg" data-caption="Analisis Mata">
+              <img src="images/Fire2.jpg" alt="Eye Analysis" onerror="this.src='https://placehold.co/400x400/0B1F3A/F59E0B?text=OptiAI+2'">
               <span class="caption">Analisis Mata</span>
             </div>
-            <div class="gallery-thumb" data-img="images/Conveyor3.jpg" data-caption="Hasil Skrining">
-              <img src="images/Conveyor3.jpg" alt="Screening Results" onerror="this.src='https://placehold.co/400x400/0B1F3A/8B5CF6?text=OptiAI+3'">
+            <div class="gallery-thumb" data-img="images/Fire3.jpg" data-caption="Hasil Skrining">
+              <img src="images/Fire3.jpg" alt="Screening Results" onerror="this.src='https://placehold.co/400x400/0B1F3A/8B5CF6?text=OptiAI+3'">
               <span class="caption">Hasil Skrining</span>
             </div>
           </div>
@@ -1958,20 +2254,20 @@
           <h3>Website Ecommerce E-Nautex</h3>
           <p>Platform digital pemasaran hasil laut yang menghubungkan nelayan langsung dengan konsumen berbasis ERP dan AI.</p>
           <div class="project-gallery">
-            <div class="gallery-thumb" data-img="images/Fire1.jpg" data-caption="Beranda E-Nautex">
-              <img src="images/Fire1.jpg" alt="E-Nautex Home" onerror="this.src='https://placehold.co/400x400/0B1F3A/60A5FA?text=E-Nautex+1'">
+            <div class="gallery-thumb" data-img="images/Conveyor1.jpg" data-caption="Beranda E-Nautex">
+              <img src="images/Conveyor1.jpg" alt="E-Nautex Home" onerror="this.src='https://placehold.co/400x400/0B1F3A/60A5FA?text=E-Nautex+1'">
               <span class="caption">Beranda</span>
             </div>
-            <div class="gallery-thumb" data-img="images/Fire2.jpg" data-caption="Dashboard Penjualan">
-              <img src="images/Fire2.jpg" alt="Sales Dashboard" onerror="this.src='https://placehold.co/400x400/0B1F3A/F59E0B?text=E-Nautex+2'">
+            <div class="gallery-thumb" data-img="images/Conveyor2.jpg" data-caption="Dashboard Penjualan">
+              <img src="images/Conveyor2.jpg" alt="Sales Dashboard" onerror="this.src='https://placehold.co/400x400/0B1F3A/F59E0B?text=E-Nautex+2'">
               <span class="caption">Dashboard Penjualan</span>
             </div>
-            <div class="gallery-thumb" data-img="images/Fire3.jpg" data-caption="Integrasi ERP">
-              <img src="images/Fire3.jpg" alt="ERP Integration" onerror="this.src='https://placehold.co/400x400/0B1F3A/8B5CF6?text=E-Nautex+3'">
+            <div class="gallery-thumb" data-img="images/Conveyor3.jpg" data-caption="Integrasi ERP">
+              <img src="images/Conveyor3.jpg" alt="ERP Integration" onerror="this.src='https://placehold.co/400x400/0B1F3A/8B5CF6?text=E-Nautex+3'">
               <span class="caption">Integrasi ERP</span>
             </div>
-            <div class="gallery-thumb" data-img="images/Fire4.jpg" data-caption="Analisis AI">
-              <img src="images/Fire4.jpg" alt="AI Analytics" onerror="this.src='https://placehold.co/400x400/0B1F3A/34D399?text=E-Nautex+4'">
+            <div class="gallery-thumb" data-img="images/Conveyor4.jpg" data-caption="Analisis AI">
+              <img src="images/Conveyor4.jpg" alt="AI Analytics" onerror="this.src='https://placehold.co/400x400/0B1F3A/34D399?text=E-Nautex+4'">
               <span class="caption">Analisis AI</span>
             </div>
           </div>
@@ -2018,7 +2314,7 @@
   </section>
 
   <!-- ============================================================
-  EDUCATION & ORGANIZATION
+  EDUCATION & ORGANIZATION - VERTIKAL
   ============================================================ -->
   <section id="education">
     <div class="wrap">
@@ -2029,151 +2325,172 @@
       <h2 class="section-title">Pendidikan & Organisasi</h2>
       <p class="section-sub">Latar belakang akademik, organisasi, dan sertifikasi</p>
 
-      <div class="edu-grid">
+      <div class="edu-vertical">
 
-        <!-- KOLOM KIRI - PENDIDIKAN -->
+        <!-- PENDIDIKAN FORMAL -->
         <div class="glass-card edu-card fade-up">
           <div class="edu-card-header">
             <i class="fas fa-graduation-cap"></i>
             <h3>Pendidikan Formal</h3>
           </div>
 
-          <div class="edu-item">
-            <div class="edu-item-header">
-              <span class="edu-institution">Politeknik Perkapalan Negeri Surabaya</span>
-              <span class="edu-badge">2022–2026</span>
+          <div class="edu-timeline">
+            <div class="edu-timeline-item">
+              <div class="edu-timeline-header">
+                <span class="edu-timeline-institution">Politeknik Perkapalan Negeri Surabaya</span>
+                <span class="edu-timeline-badge">2022–2026</span>
+              </div>
+              <div class="edu-timeline-detail">
+                <span class="edu-timeline-major"><i class="fas fa-certificate"></i> D4 – Teknik Otomasi</span>
+                <span class="edu-timeline-gpa"><i class="fas fa-star"></i> GPA 3.36/4.00</span>
+              </div>
+              <div class="edu-timeline-desc">
+                <i class="fas fa-circle-check"></i> Fokus: Sistem Kontrol Industri, PLC, IoT, Embedded System
+              </div>
             </div>
-            <div class="edu-detail">
-              <span class="edu-major"><i class="fas fa-certificate"></i> D4 – Teknik Otomasi</span>
-              <span class="edu-gpa"><i class="fas fa-star"></i> GPA 3.36/4.00</span>
-            </div>
-            <div class="edu-desc">
-              <i class="fas fa-circle-check"></i> Fokus: Sistem Kontrol Industri, PLC, IoT, Embedded System
-            </div>
-          </div>
 
-          <div class="edu-item" style="border-top:1px solid var(--glass-border); padding-top:14px; margin-top:14px;">
-            <div class="edu-item-header">
-              <span class="edu-institution">SMK Negeri 1 Surabaya</span>
-              <span class="edu-badge">2019–2022</span>
+            <div class="edu-timeline-item">
+              <div class="edu-timeline-header">
+                <span class="edu-timeline-institution">SMK Negeri 1 Surabaya</span>
+                <span class="edu-timeline-badge">2019–2022</span>
+              </div>
+              <div class="edu-timeline-detail">
+                <span class="edu-timeline-major"><i class="fas fa-certificate"></i> Teknik Elektronika Industri</span>
+              </div>
+              <div class="edu-timeline-desc">
+                <i class="fas fa-circle-check"></i> Dasar Elektronika, PLC Dasar, Sistem Kontrol
+              </div>
             </div>
-            <div class="edu-detail">
-              <span class="edu-major"><i class="fas fa-certificate"></i> Teknik Elektronika Industri</span>
-            </div>
-            <div class="edu-desc">
-              <i class="fas fa-circle-check"></i> Dasar Elektronika, PLC Dasar, Sistem Kontrol
+
+            <div class="edu-timeline-item">
+              <div class="edu-timeline-header">
+                <span class="edu-timeline-institution">SMP Negeri 1 Surabaya</span>
+                <span class="edu-timeline-badge">2016–2019</span>
+              </div>
+              <div class="edu-timeline-detail">
+                <span class="edu-timeline-major"><i class="fas fa-certificate"></i> Sekolah Menengah Pertama</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- KOLOM KANAN - ORGANISASI -->
+        <!-- ORGANISASI -->
         <div class="glass-card edu-card fade-up">
           <div class="edu-card-header">
             <i class="fas fa-users"></i>
             <h3>Pengalaman Organisasi</h3>
           </div>
 
-          <div class="org-item">
-            <div class="org-item-header">
-              <div>
-                <span class="org-name">Menteri Riset & Sains</span>
-                <span class="org-company">— BEM PPNS</span>
+          <div class="org-grid">
+            <div class="org-item">
+              <div class="org-item-header">
+                <div>
+                  <span class="org-name">Menteri Riset & Sains</span>
+                  <span class="org-company">— BEM PPNS</span>
+                </div>
+                <span class="org-badge">2024–2025</span>
               </div>
-              <span class="org-badge">2024–2025</span>
+              <div class="org-desc">Bertanggung jawab atas pengembangan riset dan inovasi di lingkungan kampus</div>
+              <div class="org-achievement"><i class="fas fa-trophy"></i> Menginisiasi 3 program riset mahasiswa</div>
+              <div class="org-photos">
+                <div class="org-photo" data-img="images/organisasi/bem1.jpg" data-caption="Rapat Koordinasi BEM">
+                  <img src="images/organisasi/bem1.jpg" alt="BEM" onerror="this.src='https://placehold.co/150x150/0B1F3A/60A5FA?text=BEM'">
+                  <span class="org-photo-caption">Rapat Koordinasi</span>
+                </div>
+                <div class="org-photo" data-img="images/organisasi/bem2.jpg" data-caption="Program Riset Mahasiswa">
+                  <img src="images/organisasi/bem2.jpg" alt="Program Riset" onerror="this.src='https://placehold.co/150x150/0B1F3A/F59E0B?text=Riset'">
+                  <span class="org-photo-caption">Program Riset</span>
+                </div>
+              </div>
             </div>
-            <div class="org-desc">Bertanggung jawab atas pengembangan riset dan inovasi di lingkungan kampus</div>
-            <div class="org-achievement"><i class="fas fa-trophy"></i> Menginisiasi 3 program riset mahasiswa</div>
-            <div class="org-photos">
-              <div class="org-photo" data-img="images/organisasi/bem1.jpg" data-caption="Rapat Koordinasi BEM">
-                <img src="images/organisasi/bem1.jpg" alt="BEM" onerror="this.src='https://placehold.co/150x150/0B1F3A/60A5FA?text=BEM'">
-                <span class="org-photo-caption">Rapat Koordinasi</span>
+
+            <div class="org-item">
+              <div class="org-item-header">
+                <div>
+                  <span class="org-name">Staf Ahli Riset & Sains</span>
+                  <span class="org-company">— BEM PPNS</span>
+                </div>
+                <span class="org-badge">2023–2024</span>
               </div>
-              <div class="org-photo" data-img="images/organisasi/bem2.jpg" data-caption="Program Riset Mahasiswa">
-                <img src="images/organisasi/bem2.jpg" alt="Program Riset" onerror="this.src='https://placehold.co/150x150/0B1F3A/F59E0B?text=Riset'">
-                <span class="org-photo-caption">Program Riset</span>
+              <div class="org-desc">Mendukung pengembangan program kerja di bidang riset dan keilmuan</div>
+              <div class="org-achievement"><i class="fas fa-trophy"></i> Mengelola 5 event workshop dan seminar</div>
+              <div class="org-photos">
+                <div class="org-photo" data-img="images/organisasi/bem3.jpg" data-caption="Workshop Akademik">
+                  <img src="images/organisasi/bem3.jpg" alt="Workshop" onerror="this.src='https://placehold.co/150x150/0B1F3A/60A5FA?text=Workshop'">
+                  <span class="org-photo-caption">Workshop</span>
+                </div>
               </div>
+            </div>
+
+            <div class="org-item">
+              <div class="org-item-header">
+                <div>
+                  <span class="org-name">Staf Ahli Dalam Negeri</span>
+                  <span class="org-company">— BISHIPS PPNS</span>
+                </div>
+                <span class="org-badge">2023–2024</span>
+              </div>
+              <div class="org-desc">Badan Integrasi Studi dan Himpunan PPNS - divisi dalam negeri</div>
+              <div class="org-achievement"><i class="fas fa-trophy"></i> Menjalin kerjasama dengan 5 instansi eksternal</div>
+            </div>
+
+            <div class="org-item">
+              <div class="org-item-header">
+                <div>
+                  <span class="org-name">Staf Magang</span>
+                  <span class="org-company">— BISHIPS PPNS</span>
+                </div>
+                <span class="org-badge">2022–2023</span>
+              </div>
+              <div class="org-desc">Program magang di Badan Integrasi Studi dan Himpunan PPNS</div>
+              <div class="org-achievement"><i class="fas fa-trophy"></i> Aktif dalam 4 acara kepanitiaan tingkat kampus</div>
             </div>
           </div>
-
-          <div class="org-item">
-            <div class="org-item-header">
-              <div>
-                <span class="org-name">Staf Ahli Riset & Sains</span>
-                <span class="org-company">— BEM PPNS</span>
-              </div>
-              <span class="org-badge">2023–2024</span>
-            </div>
-            <div class="org-desc">Mendukung pengembangan program kerja di bidang riset dan keilmuan</div>
-            <div class="org-achievement"><i class="fas fa-trophy"></i> Mengelola 5 event workshop dan seminar</div>
-            <div class="org-photos">
-              <div class="org-photo" data-img="images/organisasi/bem3.jpg" data-caption="Workshop Akademik">
-                <img src="images/organisasi/bem3.jpg" alt="Workshop" onerror="this.src='https://placehold.co/150x150/0B1F3A/60A5FA?text=Workshop'">
-                <span class="org-photo-caption">Workshop</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="org-item">
-            <div class="org-item-header">
-              <div>
-                <span class="org-name">Staf Ahli Dalam Negeri</span>
-                <span class="org-company">— BISHIPS PPNS</span>
-              </div>
-              <span class="org-badge">2023–2024</span>
-            </div>
-            <div class="org-desc">Badan Integrasi Studi dan Himpunan PPNS - divisi dalam negeri</div>
-            <div class="org-achievement"><i class="fas fa-trophy"></i> Menjalin kerjasama dengan 5 instansi eksternal</div>
-            <div class="org-photos">
-              <div class="org-photo" data-img="images/organisasi/biships1.jpg" data-caption="Kunjungan Industri">
-                <img src="images/organisasi/biships1.jpg" alt="BISHIPS" onerror="this.src='https://placehold.co/150x150/0B1F3A/8B5CF6?text=BISHIPS'">
-                <span class="org-photo-caption">Kunjungan Industri</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="org-item" style="border-bottom: none; margin-bottom:0; padding-bottom:0;">
-            <div class="org-item-header">
-              <div>
-                <span class="org-name">Staf Magang</span>
-                <span class="org-company">— BISHIPS PPNS</span>
-              </div>
-              <span class="org-badge">2022–2023</span>
-            </div>
-            <div class="org-desc">Program magang di Badan Integrasi Studi dan Himpunan PPNS</div>
-            <div class="org-achievement"><i class="fas fa-trophy"></i> Aktif dalam 4 acara kepanitiaan tingkat kampus</div>
-          </div>
-
         </div>
 
-        <!-- SERTIFIKASI - FULL WIDTH -->
-        <div class="glass-card edu-card full-width fade-up" style="grid-column:1/-1;">
+        <!-- SERTIFIKASI - UKURAN GAMBAR SESUAI -->
+        <div class="glass-card edu-card fade-up">
           <div class="edu-card-header">
             <i class="fas fa-certificate"></i>
             <h3>Sertifikasi & Prestasi</h3>
           </div>
 
           <div class="cert-grid">
+            <!-- CAEA - 1 FOTO -->
             <div class="cert-item">
               <div class="cert-icon"><i class="fas fa-flask"></i></div>
               <div class="cert-content">
                 <div class="cert-name">2nd Conference On Automation Engineering (CAEA)</div>
                 <div class="cert-desc">Partisipasi konferensi otomasi industri & sistem kontrol</div>
                 <div class="cert-badge"><i class="fas fa-medal"></i> Peserta aktif</div>
+                <div class="cert-photos">
+                  <div class="cert-photo" data-img="images/sertifikasi/caea1.jpg" data-caption="Sertifikat CAEA">
+                    <img src="images/sertifikasi/caea1.jpg" alt="CAEA" onerror="this.src='https://placehold.co/400x300/0B1F3A/60A5FA?text=CAEA+Sertifikat'">
+                    <span class="cert-photo-caption">Sertifikat CAEA</span>
+                  </div>
+                </div>
               </div>
             </div>
 
+            <!-- TOEIC - 1 FOTO -->
             <div class="cert-item">
               <div class="cert-icon"><i class="fas fa-language"></i></div>
               <div class="cert-content">
                 <div class="cert-name">TOEIC</div>
                 <div class="cert-desc">Skor 525 · Listening 210 · Reading 315</div>
                 <div class="cert-badge"><i class="fas fa-certificate"></i> Sertifikat kompetensi</div>
+                <div class="cert-photos">
+                  <div class="cert-photo" data-img="images/sertifikasi/toeic1.jpg" data-caption="Sertifikat TOEIC">
+                    <img src="images/sertifikasi/toeic1.jpg" alt="TOEIC" onerror="this.src='https://placehold.co/400x300/0B1F3A/8B5CF6?text=TOEIC+Sertifikat'">
+                    <span class="cert-photo-caption">Sertifikat TOEIC</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-      </div><!-- end edu-grid -->
+      </div><!-- end edu-vertical -->
     </div>
   </section>
 
@@ -2194,12 +2511,12 @@
         <div class="glass-card testimonial-card fade-up">
           <div class="stars">★★★★★</div>
           <p class="quote">"Dedikasi dan semangat belajarnya luar biasa. Ariyanto mampu mengintegrasikan sistem IoT dengan sangat baik dalam proyek riset kami."</p>
-          <div class="author"><strong>Dr. Rina Wijayanti</strong> · Peneliti BRIN</div>
+          <div class="author"><strong>Ir. Suwahyu,M.Sc.</strong> · Peneliti BRIN</div>
         </div>
         <div class="glass-card testimonial-card fade-up">
           <div class="stars">★★★★★</div>
           <p class="quote">"Salah satu mahasiswa paling berbakat di angkatannya. Kreatif, inovatif, dan selalu mencari solusi terbaik untuk setiap tantangan teknis."</p>
-          <div class="author"><strong>Prof. Dr. Hendra Gunawan</strong> · Dosen PPNS</div>
+          <div class="author"><strong>Afif Zuhri Arfianto, ST,MT</strong> · Dosen PPNS</div>
         </div>
       </div>
     </div>
@@ -2221,20 +2538,17 @@
           <a href="mailto:ariyantomohamad1234@gmail.com?subject=Halo%20Ariyanto%20-%20Kesempatan%20Kerja&body=Halo%20Ariyanto%2C%0A%0ASaya%20tertarik%20dengan%20portofolio%20Anda%20dan%20ingin%20berdiskusi%20lebih%20lanjut%20mengenai%20...%0A%0ATerima%20kasih." target="_blank" aria-label="Email">
             <i class="fas fa-envelope"></i>
           </a>
-          <a href="https://wa.me/6283830593567?text=Halo%20Ariyanto%2C%20saya%20tertarik%20dengan%20portofolio%20Anda.%20Apakah%20bisa%20berdiskusi%20sebentar%3F" target="_blank" aria-label="WhatsApp">
+          <a href="https://wa.me/6281217743996?text=Halo%20Ariyanto%2C%20saya%20tertarik%20dengan%20portofolio%20Anda.%20Apakah%20bisa%20berdiskusi%20sebentar%3F" target="_blank" aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
           </a>
           <a href="tel:+6283830593567" aria-label="Telepon">
             <i class="fas fa-phone"></i>
           </a>
-          <a href="https://linkedin.com/in/mohamad-ariyanto" target="_blank" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/mohamad-ariyanto-974362428?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="https://github.com/mohamadariyanto" target="_blank" aria-label="GitHub">
+          <a href="https://github.com/ariyantomohamad1234-ship-it" target="_blank" aria-label="GitHub">
             <i class="fab fa-github"></i>
-          </a>
-          <a href="https://instagram.com/mohamadariyanto" target="_blank" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
           </a>
         </div>
       </div>
@@ -2258,7 +2572,7 @@
       <a href="https://linkedin.com/in/mohamad-ariyanto" target="_blank">
         <i class="fab fa-linkedin"></i> LinkedIn
       </a>
-      <a href="https://github.com/mohamadariyanto" target="_blank">
+      <a href="https://github.com/ariyantomohamad1234-ship-it" target="_blank">
         <i class="fab fa-github"></i> GitHub
       </a>
     </div>
@@ -2289,7 +2603,6 @@
         }
       });
 
-      // Close mobile nav on link click
       mobileNav.querySelectorAll('a').forEach(function(link) {
         link.addEventListener('click', function() {
           mobileNav.classList.remove('open');
@@ -2326,7 +2639,7 @@
           this.speedX = (Math.random() - 0.5) * 0.5;
           this.speedY = (Math.random() - 0.5) * 0.5;
           this.opacity = Math.random() * 0.4 + 0.1;
-          const colors = ['60, 165, 250', '125, 211, 252', '96, 165, 250', '139, 92, 246'];
+          const colors = ['60, 165, 250', '125, 211, 252', '255, 255, 255', '139, 92, 246'];
           this.color = colors[Math.floor(Math.random() * colors.length)];
         }
 
@@ -2426,9 +2739,9 @@
       statNumbers.forEach(el => countObserver.observe(el));
 
       // ============================================================
-      // 4. INTERSECTION OBSERVER - FADE UP
+      // 4. INTERSECTION OBSERVER
       // ============================================================
-      const fadeElements = document.querySelectorAll('.fade-up, .fade-up-stagger');
+      const animElements = document.querySelectorAll('.fade-up, .fade-up-stagger, .slide-left, .slide-right, .scale-up');
 
       const observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
@@ -2439,7 +2752,7 @@
         });
       }, { root: null, rootMargin: '0px 0px -30px 0px', threshold: 0.08 });
 
-      fadeElements.forEach(function(el) {
+      animElements.forEach(function(el) {
         observer.observe(el);
       });
 
@@ -2467,11 +2780,10 @@
         });
       });
 
-      // Add fadeIn keyframe if not exists
       if (!document.getElementById('fadeInStyle')) {
         const style = document.createElement('style');
         style.id = 'fadeInStyle';
-        style.textContent = `@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }`;
+        style.textContent = `@keyframes fadeIn { from { opacity: 0; transform: translateY(15px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }`;
         document.head.appendChild(style);
       }
 
@@ -2597,11 +2909,32 @@
         });
       });
 
-      console.log('✅ Website Portfolio - UI/UX Friendly & Responsive');
+      // Gallery thumbs for certification
+      document.querySelectorAll('.cert-photo').forEach(function(thumb) {
+        thumb.addEventListener('click', function() {
+          const gallery = this.closest('.cert-photos');
+          if (gallery) {
+            const allThumbs = gallery.querySelectorAll('.cert-photo');
+            const images = [];
+            allThumbs.forEach(function(t) {
+              const img = t.querySelector('img');
+              const caption = t.querySelector('.cert-photo-caption');
+              images.push({
+                src: img ? img.src : '',
+                caption: caption ? caption.textContent : ''
+              });
+            });
+            const index = Array.from(allThumbs).indexOf(this);
+            if (index !== -1) openLightbox(images, index);
+          }
+        });
+      });
+
+      console.log('✅ Website Premium - Ukuran Gambar Sertifikasi Disesuaikan!');
       console.log('📧 Email: ariyantomohamad1234@gmail.com');
-      console.log('📱 WhatsApp: +6283830593567');
-      console.log('🔗 LinkedIn: linkedin.com/in/mohamad-ariyanto');
-      console.log('🐙 GitHub: github.com/mohamadariyanto');
+      console.log('📱 WhatsApp: +6281217743996');
+      console.log('🔗 LinkedIn: https://www.linkedin.com/in/mohamad-ariyanto-974362428?utm_source=share_via&utm_content=profile&utm_medium=member_android');
+      console.log('🐙 GitHub: https://github.com/ariyantomohamad1234-ship-it');
     })();
   </script>
 
